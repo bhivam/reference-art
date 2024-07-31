@@ -1,16 +1,17 @@
-import { useState } from "react";
 import "./App.css";
+import Model from "./components/Model";
+import Header from "./components/Header";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <p className="text-2xl">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header />
+      <main className="grid grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 h-screen">
+        <Model />
+        <div className="test bg-gray-700"></div>
+      </main>
     </>
-  );
+  )
 }
 
 export default App;
