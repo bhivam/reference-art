@@ -45,7 +45,7 @@ const initThreeJs = (canvas: HTMLCanvasElement, filePath: string) => {
   controls.enableDamping = true;
   controls.dampingFactor = 0.1;
   controls.enablePan = false;
-  controls.enableZoom = false;
+  controls.enableZoom = true;
 
   const resizeRenderer = () => {
     const width = canvas.clientWidth;
@@ -69,7 +69,6 @@ const initThreeJs = (canvas: HTMLCanvasElement, filePath: string) => {
 
   window.addEventListener("resize", resizeRenderer);
 
-  // Return a cleanup function
   return () => {
     window.removeEventListener("resize", resizeRenderer);
     renderer.dispose();
@@ -88,9 +87,5 @@ export default function Model() {
     }
   }, []);
 
-  return (
-    <div className="model-container flex justify-center items-center h-full">
-      <canvas ref={canvasRef} className="webgl w-full h-full"></canvas>
-    </div>
-  );
+  return <canvas ref={canvasRef} className="webgl w-full h-full"></canvas>;
 }

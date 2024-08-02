@@ -1,0 +1,12 @@
+ul li button {
+  position: relative;
+  transition: color 200ms ease-out;
+}
+
+ul li button:hover {
+  color: #f9a8d4;
+}
+
+ul li h1 {
+  font-family: "Honk";
+}

@@ -39,11 +39,65 @@ h6 {
   overflow-wrap: break-word;
 }
 
+:root {
+  --shadow-color: 286deg 36% 40%;
+  --shadow-elevation-low: 0.3px 0.5px 0.8px hsl(var(--shadow-color) / 0.2),
+    0.6px 1px 1.6px -0.5px hsl(var(--shadow-color) / 0.41),
+    1.3px 2.5px 3.8px -0.9px hsl(var(--shadow-color) / 0.63);
+  --shadow-elevation-medium: 0.3px 0.5px 0.8px hsl(var(--shadow-color) / 0.21),
+    1.4px 2.5px 3.9px -0.3px hsl(var(--shadow-color) / 0.38),
+    3px 5.6px 8.6px -0.6px hsl(var(--shadow-color) / 0.55),
+    6.7px 12.4px 19.1px -0.9px hsl(var(--shadow-color) / 0.72);
+  --shadow-elevation-high: 0.3px 0.5px 0.8px hsl(var(--shadow-color) / 0.19),
+    3.3px 6.2px 9.5px -0.1px hsl(var(--shadow-color) / 0.27),
+    6.1px 11.4px 17.6px -0.3px hsl(var(--shadow-color) / 0.35),
+    9.3px 17.3px 26.7px -0.4px hsl(var(--shadow-color) / 0.43),
+    13.6px 25.3px 39px -0.5px hsl(var(--shadow-color) / 0.51),
+    19.6px 36.5px 56.2px -0.7px hsl(var(--shadow-color) / 0.59),
+    28.2px 52.5px 80.9px -0.8px hsl(var(--shadow-color) / 0.67),
+    39.9px 74.3px 114.5px -0.9px hsl(var(--shadow-color) / 0.74);
+}
+
 #root,
 #__next {
   isolation: isolate;
 }
 
-#root, main {
+html,
+body {
+  font-size: 1rem;
+  font-family: "IBM Plex Mono", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,
+body,
+#root,
+main {
   height: 100svh;
+}
+
+/* grid grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 */
+
+main {
+  background-size: 1rem 1rem;
+  background-image:
+    linear-gradient(to right, grey 1px, transparent 1px),
+    linear-gradient(to bottom, grey 1px, transparent 1px);
+}
+
+main .test {
+  box-shadow: var(--shadow-elevation-medium);
+  background-image: linear-gradient(
+    0deg,
+    hsl(319deg 94% 87%) 0%,
+    hsl(317deg 94% 86%) 11%,
+    hsl(315deg 94% 85%) 22%,
+    hsl(313deg 93% 83%) 33%,
+    hsl(311deg 92% 82%) 44%,
+    hsl(309deg 90% 81%) 56%,
+    hsl(307deg 88% 80%) 67%,
+    hsl(305deg 86% 78%) 78%,
+    hsl(302deg 83% 77%) 89%,
+    hsl(300deg 81% 75%) 100%
+  );
 }
